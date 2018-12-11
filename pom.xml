@@ -22,6 +22,7 @@
     </modules>
 
     <properties>
+        <java.version>1.8</java.version>
         <assertj-core.version>3.11.0</assertj-core.version>
         <java.compiler.version>1.8</java.compiler.version>
         <enunciate.version>2.7.0</enunciate.version>
@@ -131,7 +132,10 @@
     <build>
         <pluginManagement>
             <plugins>
-
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                </plugin>
             </plugins>
         </pluginManagement>
     </build>

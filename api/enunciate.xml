@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<enunciate xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:noNamespaceSchemaLocation="http://enunciate.webcohesion.com/schemas/enunciate-2.11.0.xsd">
+    <title>Identity Profile API</title>
+    <description format="html" file="src/main/resources/description.html"/>
+    <copyright>HospiceCareDoftware</copyright>
+
+    <api-classes>
+        <include pattern="org.hcs.profile.ws.v1.endpoints.*"/>
+        <include pattern="org.hcd.profile.data.*"/>
+        <!--include pattern="org.hcd.profile.managers.Gender"/-->
+        <include pattern="org.hcd.profile.managers.Enabled"/>
+        <exclude pattern="org.hcd.profile.ws.v1.endpoints.LogEndpoints"/>
+    </api-classes>
+
+    <facets>
+        <exclude name="internal.endpoint"/>
+    </facets>
+
+    <modules>
+        <!-- Disable jackson1 since both are on the classpath and this causes the client side jars to ignore
+              the jackson2 annotations  -->
+        <jackson1 disabled="true"/>
+
+        <!-- Disable all XML client generation -->
+        <c-xml-client disabled="true"/>
+        <csharp-xml-client disabled="true"/>
+        <java-xml-client disabled="true"/>
+        <obj-c-xml-client disabled="true"/>
+        <php-xml-client disabled="true"/>
+        <gwt-json-overlay disabled="true"/>
+        <java-json-client disabled="false"/>
+        <php-json-client disabled="true"/>
+        <ruby-json-client disabled="true"/>
+        <spring-web disabled="false" />
+    </modules>
+</enunciate>
